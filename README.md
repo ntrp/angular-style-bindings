@@ -4,10 +4,10 @@
 
 ## Getting Started
 
-Download the [production version][min] or the [development version][max].
+Download the [production version][prod] or the [development version][dev].
 
-[min]: https://raw.github.com/ntrp/jquery-qantic.angularjs.stylemodel/master/dist/angular-qantic.angularjs.stylemodel.min.js
-[max]: https://raw.github.com/ntrp/jquery-qantic.angularjs.stylemodel/master/dist/angular-qantic.angularjs.stylemodel.js
+[prod]: https://raw.github.com/ntrp/qantic-angularjs-stylemodel/master/dist/qantic.angularjs.stylemodel.min.js
+[dev]: https://raw.github.com/ntrp/qantic-angularjs-stylemodel/master/dist/qantic.angularjs.stylemodel.js
 
 In your web page:
 
