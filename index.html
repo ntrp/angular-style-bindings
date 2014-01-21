@@ -20,7 +20,7 @@
     <header>
       <div class="inner">
         <h1>Qantic Stylemodel</h1>
-        <h2>the moduel can be used to bind style changes to mouse movements (eg. resize, move)</h2>
+        <h2>useful module can be used to bind style changes to mouse movements (eg. resize, move)</h2>
         <a href="https://github.com/ntrp/qantic-angularjs-stylemodel" class="button"><small>View project on</small>GitHub</a>
       </div>
     </header>
@@ -29,9 +29,9 @@
       <div class="inner clearfix">
         <section id="main-content">
           <h1>
-<a name="qanticangularjsstylemodel" class="anchor" href="#qanticangularjsstylemodel"><span class="octicon octicon-link"></span></a>qantic.angularjs.stylemodel</h1>
+<a name="angularjs-stylemodel" class="anchor" href="#angularjs-stylemodel"><span class="octicon octicon-link"></span></a>AngularJS StyleModel</h1>
 
-<p>The module is not yet optimized but it is very flexible and powerfull</p>
+<p>The module is not yet optimized but it is very flexible and powerful.</p>
 
 <h2>
 <a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting Started</h2>
@@ -56,8 +56,14 @@
    <span class="nx">$scope</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s1">'World'</span><span class="p">;</span>
    <span class="nx">$scope</span><span class="p">.</span><span class="nx">styleModelContainer</span> <span class="o">=</span> <span class="nx">StyleModelContainer</span><span class="p">;</span>
 
-   <span class="nx">$scope</span><span class="p">.</span><span class="nx">styleModelContainer</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'modal-pos'</span><span class="p">,</span> <span class="o">-</span><span class="kc">Infinity</span><span class="p">,</span> <span class="kc">Infinity</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">Infinity</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
-   <span class="nx">$scope</span><span class="p">.</span><span class="nx">styleModelContainer</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'modal-size'</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="kc">Infinity</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="kc">Infinity</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+   <span class="nx">$scope</span><span class="p">.</span><span class="nx">styleModelContainer</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'modal-pos'</span><span class="p">,</span> 
+                                  <span class="o">-</span><span class="kc">Infinity</span><span class="p">,</span> <span class="kc">Infinity</span><span class="p">,</span> 
+                                   <span class="mi">0</span><span class="p">,</span> <span class="kc">Infinity</span><span class="p">,</span>
+                                   <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+   <span class="nx">$scope</span><span class="p">.</span><span class="nx">styleModelContainer</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'modal-size'</span><span class="p">,</span>
+                                   <span class="mi">250</span><span class="p">,</span> <span class="kc">Infinity</span><span class="p">,</span>
+                                   <span class="mi">100</span><span class="p">,</span> <span class="kc">Infinity</span><span class="p">,</span>
+                                   <span class="mi">300</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
 
    <span class="nx">$scope</span><span class="p">.</span><span class="nx">styleModPos</span> <span class="o">=</span> <span class="nx">StyleModelContainer</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'modal-pos'</span><span class="p">);</span>
    <span class="nx">$scope</span><span class="p">.</span><span class="nx">styleModSize</span> <span class="o">=</span> <span class="nx">StyleModelContainer</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'modal-size'</span><span class="p">);</span>
