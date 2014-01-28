@@ -1,13 +1,20 @@
-# qantic.angularjs.stylemodel
+# AngularJS StyleModel
 
-The module is not yet optimized but it is very flexible and powerfull
+The module is not yet optimized but it is very flexible and powerful.
+
+Here you can see some use cases: 
+
+* [Move and resize Modal][plkr]
+* [Move, resize and change color][plkr2]
+* [Multi split panes][plkr3]
+* [Sliders][plkr4]
+
+[plkr]: http://plnkr.co/edit/mgCfrpwAzTRJUIO3Gqv4?p=preview
+[plkr2]: http://plnkr.co/edit/9Z8JbQDszvoM96TyyoFh?p=preview
+[plkr3]: http://plnkr.co/edit/7ZAY9L?p=preview
+[plkr4]: http://plnkr.co/edit/ZVjB7z?p=preview
 
 ## Getting Started
-
-Download the [production version][prod] or the [development version][dev].
-
-[prod]: https://raw.github.com/ntrp/qantic-angularjs-stylemodel/master/dist/qantic.angularjs.stylemodel.min.js
-[dev]: https://raw.github.com/ntrp/qantic-angularjs-stylemodel/master/dist/qantic.angularjs.stylemodel.js
 
 In your web page:
 
@@ -31,8 +38,14 @@ app.controller('MainCtrl', function($scope, StyleModelContainer) {
    $scope.name = 'World';
    $scope.styleModelContainer = StyleModelContainer;
   
-   $scope.styleModelContainer.add('modal-pos', -Infinity, Infinity, 0, Infinity, 20, 20);
-   $scope.styleModelContainer.add('modal-size', 250, Infinity, 100, Infinity, 300, 200);
+   $scope.styleModelContainer.add('modal-pos', 
+                                  -Infinity, Infinity, 
+                                   0, Infinity,
+                                   20, 20);
+   $scope.styleModelContainer.add('modal-size',
+                                   250, Infinity,
+                                   100, Infinity,
+                                   300, 200);
   
    $scope.styleModPos = StyleModelContainer.get('modal-pos');
    $scope.styleModSize = StyleModelContainer.get('modal-size');
@@ -89,11 +102,3 @@ Then in the html bind the model transform directive to an element and set ng-sty
    </div>
 </body>
 ```
-
-Here is the working plunker example: 
-
-* [Move and resize Modal][plkr]
-* [Move, resize and change color][plkr2]
-
-[plkr]: http://plnkr.co/edit/mgCfrpwAzTRJUIO3Gqv4?p=preview
-[plkr2]: http://plnkr.co/edit/9Z8JbQDszvoM96TyyoFh?p=preview
