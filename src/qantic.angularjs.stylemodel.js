@@ -61,7 +61,7 @@ angular.module('qantic.angularjs.stylemodel', [])
                dx = 0,
                dy = 0;
          
-         elem.bind('mousedown', function () {
+         elem.bind('mousedown', function (event) {
             if (event.button !== 0) {
                return;
             }
