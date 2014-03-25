@@ -62,7 +62,7 @@ angular.module('qantic.angularjs.stylemodel', [])
                dy = 0;
          
          elem.bind('mousedown', function (event) {
-            if (event.button !== 0) {
+            if (event.button == 2) {
                return;
             }
             event.preventDefault();
