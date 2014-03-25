@@ -58,7 +58,7 @@ angular.module('qantic.angularjs.stylemodel', []).provider('StyleModelContainer'
       link: function (scope, elem, attr) {
         var styleModel = StyleModelContainer.get(attr.styleName), px = 0, py = 0, dx = 0, dy = 0;
         elem.bind('mousedown', function (event) {
-          if (event.button !== 0) {
+          if (event.button == 2) {
             return;
           }
           event.preventDefault();
