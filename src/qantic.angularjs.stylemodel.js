@@ -70,15 +70,15 @@ angular.module('qantic.angularjs.stylemodel', [])
             $document.unbind('mouseup', detachTransform);
             px = styleModel.pivotx;
             py = styleModel.pivoty
-            dx = event.pageX - px;
-            dy = event.pageY - py;
+            dx = event.clientX - px;
+            dy = event.clientY - py;
             $document.bind('mousemove', trasformStyle);
             $document.bind('mouseup', detachTransform);
          });
          
          function trasformStyle(event) {
-            px = event.pageX - dx;
-            py = event.pageY - dy;
+            px = event.clientX - dx;
+            py = event.clientY - dy;
             scope.$apply(styleModel.transform(px,py));
          }
          
