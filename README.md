@@ -1,4 +1,4 @@
-# AngularJS StyleModel
+# Angular Style Bindings
 
 The module is not yet optimized but it is very flexible and powerful.
 
@@ -20,13 +20,13 @@ In your web page:
 
 ```html
 <script src="angular.js"></script>
-<script src="qantic.angularjs.stylemodel.min.js"></script>
+<script src="angular-style-bindings.min.js"></script>
 ```
 
 As soon as you've got all the files downloaded and included in your page you just need to declare a dependency on the qantic.angularjs.stylemodel module:
 
 ```javascript
-angular.module('myModule', ['qantic.angularjs.stylemodel']);
+angular.module('myModule', ['angular.style.bindings']);
 ```
 
 Now you are ready to configure and use the module.

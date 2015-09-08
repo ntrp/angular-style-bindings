@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('qantic.angularjs.stylemodel', [])
+angular.module('angular.style.bindings', [])
  
 .provider('StyleModelContainer', function () {
 
