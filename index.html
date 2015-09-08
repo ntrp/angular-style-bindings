@@ -5,23 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
 
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <title>Qantic Stylemodel by ntrp</title>
+    <title>Angular Style Bindings by ntrp</title>
   </head>
 
   <body>
     <header>
       <div class="inner">
-        <h1>Qantic Stylemodel</h1>
-        <h2>amazing module that can be used to bind style changes to mouse movements (eg. resize, move)</h2>
-        <a href="https://github.com/ntrp/qantic-angularjs-stylemodel" class="button"><small>View project on</small>GitHub</a>
+        <h1>Angular Style Bindings</h1>
+        <h2>nice module that can be used to bind style changes to mouse movements (eg. resize, move)</h2>
+        <a href="https://github.com/ntrp/angular-style-bindings" class="button"><small>View project on</small> GitHub</a>
       </div>
     </header>
 
@@ -29,7 +29,7 @@
       <div class="inner clearfix">
         <section id="main-content">
           <h1>
-<a name="angularjs-stylemodel" class="anchor" href="#angularjs-stylemodel"><span class="octicon octicon-link"></span></a>AngularJS StyleModel</h1>
+<a id="angular-style-bindings" class="anchor" href="#angular-style-bindings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Angular Style Bindings</h1>
 
 <p>The module is not yet optimized but it is very flexible and powerful.</p>
 
@@ -40,105 +40,103 @@
 <li><a href="http://plnkr.co/edit/9Z8JbQDszvoM96TyyoFh?p=preview">Move, resize and change color</a></li>
 <li><a href="http://plnkr.co/edit/7ZAY9L?p=preview">Multi split panes</a></li>
 <li><a href="http://plnkr.co/edit/ZVjB7z?p=preview">Sliders</a></li>
-</ul><h2>
-<a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting Started</h2>
+</ul>
+
+<h2>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting Started</h2>
 
 <p>In your web page:</p>
 
-<div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"angular.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"qantic.angularjs.stylemodel.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-</pre></div>
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>angular.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>angular-style-bindings.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
 
-<p>As soon as you've got all the files downloaded and included in your page you just need to declare a dependency on the qantic.angularjs.stylemodel module:</p>
+<p>As soon as you've got all the files downloaded and included in your page you just need to declare a dependency on the angular.style.bindings module:</p>
 
-<div class="highlight highlight-javascript"><pre><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'myModule'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'qantic.angularjs.stylemodel'</span><span class="p">]);</span>
-</pre></div>
+<div class="highlight highlight-javascript"><pre>angular.module(<span class="pl-s"><span class="pl-pds">'</span>myModule<span class="pl-pds">'</span></span>, [<span class="pl-s"><span class="pl-pds">'</span>angular.style.bindings<span class="pl-pds">'</span></span>]);</pre></div>
 
 <p>Now you are ready to configure and use the module.</p>
 
 <p>Add some models to the StyleModelContainer and then for every model define the styles associated to that model. Every style will have a transform function that receives x and y offsets from the press point and returns a style object.</p>
 
-<div class="highlight highlight-javascript"><pre><span class="nx">app</span><span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s1">'MainCtrl'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$scope</span><span class="p">,</span> <span class="nx">StyleModelContainer</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight highlight-javascript"><pre>app.controller(<span class="pl-s"><span class="pl-pds">'</span>MainCtrl<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">$scope</span>, <span class="pl-smi">StyleModelContainer</span>) {
 
-   <span class="nx">$scope</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s1">'World'</span><span class="p">;</span>
-   <span class="nx">$scope</span><span class="p">.</span><span class="nx">styleModelContainer</span> <span class="o">=</span> <span class="nx">StyleModelContainer</span><span class="p">;</span>
+   $scope.<span class="pl-c1">name</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>World<span class="pl-pds">'</span></span>;
+   $scope.styleModelContainer <span class="pl-k">=</span> StyleModelContainer;
 
-   <span class="nx">$scope</span><span class="p">.</span><span class="nx">styleModelContainer</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'modal-pos'</span><span class="p">,</span> 
-                                  <span class="o">-</span><span class="kc">Infinity</span><span class="p">,</span> <span class="kc">Infinity</span><span class="p">,</span> 
-                                   <span class="mi">0</span><span class="p">,</span> <span class="kc">Infinity</span><span class="p">,</span>
-                                   <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
-   <span class="nx">$scope</span><span class="p">.</span><span class="nx">styleModelContainer</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'modal-size'</span><span class="p">,</span>
-                                   <span class="mi">250</span><span class="p">,</span> <span class="kc">Infinity</span><span class="p">,</span>
-                                   <span class="mi">100</span><span class="p">,</span> <span class="kc">Infinity</span><span class="p">,</span>
-                                   <span class="mi">300</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+   $scope.styleModelContainer.<span class="pl-c1">add</span>(<span class="pl-s"><span class="pl-pds">'</span>modal-pos<span class="pl-pds">'</span></span>, 
+                                  <span class="pl-k">-</span><span class="pl-c1">Infinity</span>, <span class="pl-c1">Infinity</span>, 
+                                   <span class="pl-c1">0</span>, <span class="pl-c1">Infinity</span>,
+                                   <span class="pl-c1">20</span>, <span class="pl-c1">20</span>);
+   $scope.styleModelContainer.<span class="pl-c1">add</span>(<span class="pl-s"><span class="pl-pds">'</span>modal-size<span class="pl-pds">'</span></span>,
+                                   <span class="pl-c1">250</span>, <span class="pl-c1">Infinity</span>,
+                                   <span class="pl-c1">100</span>, <span class="pl-c1">Infinity</span>,
+                                   <span class="pl-c1">300</span>, <span class="pl-c1">200</span>);
 
-   <span class="nx">$scope</span><span class="p">.</span><span class="nx">styleModPos</span> <span class="o">=</span> <span class="nx">StyleModelContainer</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'modal-pos'</span><span class="p">);</span>
-   <span class="nx">$scope</span><span class="p">.</span><span class="nx">styleModSize</span> <span class="o">=</span> <span class="nx">StyleModelContainer</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'modal-size'</span><span class="p">);</span>
+   $scope.styleModPos <span class="pl-k">=</span> StyleModelContainer.get(<span class="pl-s"><span class="pl-pds">'</span>modal-pos<span class="pl-pds">'</span></span>);
+   $scope.styleModSize <span class="pl-k">=</span> StyleModelContainer.get(<span class="pl-s"><span class="pl-pds">'</span>modal-size<span class="pl-pds">'</span></span>);
 
-   <span class="nx">$scope</span><span class="p">.</span><span class="nx">styleModPos</span><span class="p">.</span><span class="nx">addStyle</span><span class="p">(</span><span class="s1">'modal-pos'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span>   <span class="p">{</span>
-               <span class="s1">'position'</span><span class="o">:</span> <span class="s1">'fixed'</span><span class="p">,</span>
-               <span class="s1">'top'</span><span class="o">:</span> <span class="nx">y</span> <span class="o">+</span> <span class="s1">'px'</span><span class="p">,</span>
-               <span class="s1">'left'</span><span class="o">:</span> <span class="nx">x</span> <span class="o">+</span> <span class="s1">'px'</span><span class="p">,</span>
-               <span class="s1">'width'</span><span class="o">:</span> <span class="s1">'300px'</span><span class="p">,</span>
-               <span class="s1">'height'</span><span class="o">:</span> <span class="s1">'200px'</span>
-               <span class="p">};</span>
-   <span class="p">});</span>
+   $scope.styleModPos.addStyle(<span class="pl-s"><span class="pl-pds">'</span>modal-pos<span class="pl-pds">'</span></span>, <span class="pl-k">function</span> (<span class="pl-smi">x</span>, <span class="pl-smi">y</span>) {
+      <span class="pl-k">return</span>   {
+               <span class="pl-s"><span class="pl-pds">'</span>position<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>fixed<span class="pl-pds">'</span></span>,
+               <span class="pl-s"><span class="pl-pds">'</span>top<span class="pl-pds">'</span></span><span class="pl-k">:</span> y <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span>px<span class="pl-pds">'</span></span>,
+               <span class="pl-s"><span class="pl-pds">'</span>left<span class="pl-pds">'</span></span><span class="pl-k">:</span> x <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span>px<span class="pl-pds">'</span></span>,
+               <span class="pl-s"><span class="pl-pds">'</span>width<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>300px<span class="pl-pds">'</span></span>,
+               <span class="pl-s"><span class="pl-pds">'</span>height<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>200px<span class="pl-pds">'</span></span>
+               };
+   });
 
-   <span class="nx">$scope</span><span class="p">.</span><span class="nx">styleModSize</span><span class="p">.</span><span class="nx">addStyle</span><span class="p">(</span><span class="s1">'modal-size'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span>   <span class="p">{</span>
-               <span class="s1">'width'</span><span class="o">:</span> <span class="nx">x</span> <span class="o">+</span> <span class="s1">'px'</span><span class="p">,</span>
-               <span class="s1">'height'</span><span class="o">:</span> <span class="nx">y</span> <span class="o">+</span><span class="s1">'px'</span>
-               <span class="p">};</span>
-   <span class="p">});</span>
+   $scope.styleModSize.addStyle(<span class="pl-s"><span class="pl-pds">'</span>modal-size<span class="pl-pds">'</span></span>, <span class="pl-k">function</span> (<span class="pl-smi">x</span>, <span class="pl-smi">y</span>) {
+      <span class="pl-k">return</span>   {
+               <span class="pl-s"><span class="pl-pds">'</span>width<span class="pl-pds">'</span></span><span class="pl-k">:</span> x <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span>px<span class="pl-pds">'</span></span>,
+               <span class="pl-s"><span class="pl-pds">'</span>height<span class="pl-pds">'</span></span><span class="pl-k">:</span> y <span class="pl-k">+</span><span class="pl-s"><span class="pl-pds">'</span>px<span class="pl-pds">'</span></span>
+               };
+   });
 
-   <span class="nx">$scope</span><span class="p">.</span><span class="nx">styleModSize</span><span class="p">.</span><span class="nx">addStyle</span><span class="p">(</span><span class="s1">'resizer-pos'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span>   <span class="p">{</span>
-               <span class="s1">'top'</span><span class="o">:</span> <span class="p">(</span><span class="nx">y</span> <span class="o">-</span> <span class="mi">26</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'px'</span><span class="p">,</span>
-               <span class="s1">'left'</span><span class="o">:</span> <span class="p">(</span><span class="nx">x</span> <span class="o">-</span> <span class="mi">26</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'px'</span>
-               <span class="p">};</span>
-   <span class="p">});</span>
-<span class="p">});</span>
-</pre></div>
+   $scope.styleModSize.addStyle(<span class="pl-s"><span class="pl-pds">'</span>resizer-pos<span class="pl-pds">'</span></span>, <span class="pl-k">function</span> (<span class="pl-smi">x</span>, <span class="pl-smi">y</span>) {
+      <span class="pl-k">return</span>   {
+               <span class="pl-s"><span class="pl-pds">'</span>top<span class="pl-pds">'</span></span><span class="pl-k">:</span> (y <span class="pl-k">-</span> <span class="pl-c1">26</span>) <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span>px<span class="pl-pds">'</span></span>,
+               <span class="pl-s"><span class="pl-pds">'</span>left<span class="pl-pds">'</span></span><span class="pl-k">:</span> (x <span class="pl-k">-</span> <span class="pl-c1">26</span>) <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span>px<span class="pl-pds">'</span></span>
+               };
+   });
+});</pre></div>
 
 <p>Then in the html bind the model transform directive to an element and set ng-style on the elements that need to be transformed:</p>
 
-<div class="highlight highlight-html"><pre><span class="nt">&lt;body</span> <span class="na">ng-controller=</span><span class="s">"MainCtrl"</span><span class="nt">&gt;</span>
-   <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"ex1"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"modal-wrapper"</span>
-         <span class="na">ng-style=</span><span class="s">"styleModPos.styleObject['modal-pos'].style"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel panel-default"</span>
-            <span class="na">ng-style=</span><span class="s">"styleModSize.styleObject['modal-size'].style"</span><span class="nt">&gt;</span>
-         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel-heading"</span> 
-               <span class="na">transform-multi-style</span> <span class="na">style-name=</span><span class="s">"modal-pos"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;h3</span> <span class="na">class=</span><span class="s">"panel-title"</span><span class="nt">&gt;</span>Panel title<span class="nt">&lt;/h3&gt;</span>
-         <span class="nt">&lt;/div&gt;</span>
-         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel-body"</span><span class="nt">&gt;</span>
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">body</span> <span class="pl-e">ng-controller</span>=<span class="pl-s"><span class="pl-pds">"</span>MainCtrl<span class="pl-pds">"</span></span>&gt;
+   &lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>ex1<span class="pl-pds">"</span></span>&gt;
+      &lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>modal-wrapper<span class="pl-pds">"</span></span>
+         <span class="pl-e">ng-style</span>=<span class="pl-s"><span class="pl-pds">"</span>styleModPos.styleObject['modal-pos'].style<span class="pl-pds">"</span></span>&gt;
+      &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>panel panel-default<span class="pl-pds">"</span></span>
+            <span class="pl-e">ng-style</span>=<span class="pl-s"><span class="pl-pds">"</span>styleModSize.styleObject['modal-size'].style<span class="pl-pds">"</span></span>&gt;
+         &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>panel-heading<span class="pl-pds">"</span></span> 
+               <span class="pl-e">transform-multi-style</span> <span class="pl-e">style-name</span>=<span class="pl-s"><span class="pl-pds">"</span>modal-pos<span class="pl-pds">"</span></span>&gt;
+            &lt;<span class="pl-ent">h3</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>panel-title<span class="pl-pds">"</span></span>&gt;Panel title&lt;/<span class="pl-ent">h3</span>&gt;
+         &lt;/<span class="pl-ent">div</span>&gt;
+         &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>panel-body<span class="pl-pds">"</span></span>&gt;
             Panel content
-            <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"resizer"</span>
-               <span class="na">transform-multi-style</span> <span class="na">style-name=</span><span class="s">"modal-size"</span>
-               <span class="na">ng-style=</span><span class="s">"styleModSize.styleObject['resizer-pos'].style"</span><span class="nt">&gt;</span>
-               <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"glyphicon glyphicon-move"</span><span class="nt">&gt;&lt;/span&gt;</span>
-            <span class="nt">&lt;/div&gt;</span>
-         <span class="nt">&lt;/div&gt;</span>
-      <span class="nt">&lt;/div&gt;</span>
-      <span class="nt">&lt;/div&gt;</span>
-   <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/body&gt;</span>
-</pre></div>
+            &lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>resizer<span class="pl-pds">"</span></span>
+               <span class="pl-e">transform-multi-style</span> <span class="pl-e">style-name</span>=<span class="pl-s"><span class="pl-pds">"</span>modal-size<span class="pl-pds">"</span></span>
+               <span class="pl-e">ng-style</span>=<span class="pl-s"><span class="pl-pds">"</span>styleModSize.styleObject['resizer-pos'].style<span class="pl-pds">"</span></span>&gt;
+               &lt;<span class="pl-ent">span</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>glyphicon glyphicon-move<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">span</span>&gt;
+            &lt;/<span class="pl-ent">div</span>&gt;
+         &lt;/<span class="pl-ent">div</span>&gt;
+      &lt;/<span class="pl-ent">div</span>&gt;
+      &lt;/<span class="pl-ent">div</span>&gt;
+   &lt;/<span class="pl-ent">div</span>&gt;
+&lt;/<span class="pl-ent">body</span>&gt;</pre></div>
         </section>
 
         <aside id="sidebar">
-          <a href="https://github.com/ntrp/qantic-angularjs-stylemodel/zipball/master" class="button">
+          <a href="https://github.com/ntrp/angular-style-bindings/zipball/master" class="button">
             <small>Download</small>
             .zip file
           </a>
-          <a href="https://github.com/ntrp/qantic-angularjs-stylemodel/tarball/master" class="button">
+          <a href="https://github.com/ntrp/angular-style-bindings/tarball/master" class="button">
             <small>Download</small>
             .tar.gz file
           </a>
 
-          <p class="repo-owner"><a href="https://github.com/ntrp/qantic-angularjs-stylemodel"></a> is maintained by <a href="https://github.com/ntrp">ntrp</a>.</p>
+          <p class="repo-owner"><a href="https://github.com/ntrp/angular-style-bindings"></a> is maintained by <a href="https://github.com/ntrp">ntrp</a>.</p>
 
           <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
         </aside>
@@ -155,20 +153,6 @@
             pageTracker._trackPageview();
             } catch(err) {}
           </script>
-          
-<!-- AddThis Smart Layers BEGIN -->
-<!-- Go to http://www.addthis.com/get/smart-layers to customize -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52e2c9b920b414a2"></script>
-<script type="text/javascript">
-  addthis.layers({
-    'theme' : 'transparent',
-    'share' : {
-      'position' : 'left',
-      'numPreferredServices' : 5
-    }   
-  });
-</script>
-<!-- AddThis Smart Layers END -->
 
   </body>
 </html>
